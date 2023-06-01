@@ -1,0 +1,141 @@
+#include <iostream>
+
+#include <vector>
+
+#include <algorithm>
+
+template <typename T>
+
+void selectionSort(std::vector<T>& arr) {
+
+    int n = arr.size();
+
+    for (int i = 0; i < n - 1; i++) {
+
+        int minIndex = i;
+
+        for (int j = i + 1; j < n; j++) {
+
+            if (arr[j] < arr[minIndex])
+
+                minIndex = j;
+
+        }
+
+        std::swap(arr[minIndex], arr[i]);
+
+    }
+
+}
+
+int main() {
+
+    int choice;
+
+    std::cout << "Menu:" << std::endl;
+
+    std::cout << "1. Sort integers" << std::endl;
+
+    std::cout << "2. Sort characters" << std::endl;
+
+    std::cout << "3. Sort strings" << std::endl;
+
+    std::cout << "Enter your choice (1-3): ";
+
+    std::cin >> choice;
+
+    switch (choice) {
+
+        case 1: {
+
+            int n;
+
+            std::cout << "Enter the number of integers: ";
+
+            std::cin >> n;
+
+            std::vector<int> arr(n);
+
+            std::cout << "Enter the integers: ";
+
+            for (int i = 0; i < n; i++)
+
+                std::cin >> arr[i];
+
+            selectionSort(arr);
+
+            std::cout << "Sorted integers: ";
+
+            for (int i = 0; i < n; i++)
+
+                std::cout << arr[i] << " ";
+
+            break;
+
+        }
+
+        case 2: {
+
+            int n;
+
+            std::cout << "Enter the number of characters: ";
+
+            std::cin >> n;
+
+            std::vector<char> arr(n);
+
+            std::cout << "Enter the characters: ";
+
+            for (int i = 0; i < n; i++)
+
+                std::cin >> arr[i];
+
+            selectionSort(arr);
+
+            std::cout << "Sorted characters: ";
+
+            for (int i = 0; i < n; i++)
+
+                std::cout << arr[i] << " ";
+
+            break;
+
+        }
+
+        case 3: {
+
+            int n;
+
+            std::cout << "Enter the number of strings: ";
+
+            std::cin >> n;
+
+            std::vector<std::string> arr(n);
+
+            std::cout << "Enter the strings: ";
+
+            for (int i = 0; i < n; i++)
+
+                std::cin >> arr[i];
+
+            selectionSort(arr);
+
+            std::cout << "Sorted strings: ";
+
+            for (int i = 0; i < n; i++)
+
+                std::cout << arr[i] << " ";
+
+            break;
+
+        }
+
+        default:
+
+            std::cout << "Invalid choice!" << std::endl;
+
+    }
+
+    return 0;
+
+}
