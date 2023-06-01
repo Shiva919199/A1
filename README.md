@@ -22,5 +22,46 @@ pr2
 
 
 salesforce login https://login.salesforce.com/?locale=in
-pr
+pr3 
 
+https://salesforceforfresher.wordpress.com/2021/06/03/triangle-star-pattern-program-in-apex/
+
+https://salesforceforfresher.wordpress.com/2021/06/03/how-to-print-pattern-in-apex/
+
+for(integer i=0;i<=4;i++)
+
+    {
+
+        string s = '  ';
+
+        for(integer j=0;j<=8;j++)
+
+        {
+
+            if(j>=4-i && j<=4+i )
+
+            {
+
+                s = s + 'x';
+
+                
+
+            }
+
+            else
+
+            {
+
+                 s = s + '_';
+
+            }
+
+        }
+
+        
+
+        system.debug(s);
+
+        
+
+    }
